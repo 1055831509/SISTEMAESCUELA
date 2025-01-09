@@ -10,7 +10,7 @@ include '../../admin/layout/parte1.php';
     <div class="content">
       <div class="container">
         <div class="row">
-          <h1>Creacion de un nuevo usuario</h1> 
+          <h1>Creacion de un nuevo rol</h1> 
           
           <br>
 

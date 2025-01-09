@@ -1,6 +1,6 @@
 <?php
 
-include'../../../app/config.php';
+include '../../../app/config.php';
 
 $nombre_rol = $_POST['nombre_rol'];
 $nombre_rol = mb_strtoupper($nombre_rol, 'UTF-8');
