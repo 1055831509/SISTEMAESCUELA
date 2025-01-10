@@ -35,7 +35,7 @@ include '../../app/controllers/usuarios/listado_usuarios.php';
               <tr>
                 <th><center>Nro</center></th>
                 <th><center>Nombres del usuario</center></th>
-                <th><center>Rol id</center></th>
+                <th><center>Rol</center></th>
                 <th><center>Email</center></th>
                 <th><center>Fecha de creacion</center></th>
                 <th><center>Estado</center></th>
@@ -55,17 +55,16 @@ include '../../app/controllers/usuarios/listado_usuarios.php';
                 <td><?=$usuario['email'];?></td>
                 <td><?=$usuario['fyh_creacion'];?></td>
                 <td><?=$usuario['estado'];?></td>
-                <td><?=$usuario['estado'];?></td>
-                <td style="text-align:center;">
+                <td style="text-align:center">
                 <div class="btn-group" role="group" aria-label="Basic example">
                    <a href="show.php?id=<?=$id_usuario;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye-fill"></i></a>
                    <a href="edit.php?id=<?=$id_usuario;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                   <form action="<?=APP_URL;?>/app/controllers/roles/delete.php" method="post" id="miFormulario<?=$id_usuario;?>">
-                       <input type="hidden" name="id_rol" value="<?=$id_usuario;?>">
+                   <form action="<?=APP_URL;?>/app/controllers/usuarios/delete.php" onclick="preguntar(event)" method="post" id="miFormulario<?=$id_usuario;?>">
+                       <input type="hidden" name="id_usuario" value="<?=$id_usuario;?>">
                        <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                    </form>
                    <script>
-function preguntar (event){
+function preguntar<?=$id_usuario;?>(event){
 
   event.preventDefault();
   Swal.fire({
