@@ -19,6 +19,8 @@ if($nombre_rol == ""){
 (nombre_rol, fyh_creacion, estado) 
 VALUES (:nombre_rol,:fyh_creacion,:estado) ");
 
+$fechaHora = date('Y-m-d H:i:s'); // Obtener la fecha y hora actual AQUÍ
+
 $sentencia->bindParam('nombre_rol', $nombre_rol);
 $sentencia->bindParam('fyh_creacion', $fechaHora);
 $sentencia->bindParam('estado', $estado_de_registro);
