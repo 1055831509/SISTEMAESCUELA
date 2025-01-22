@@ -4,6 +4,7 @@ include '../admin/layout/parte1.php';
 include '../app/controllers/roles/listado_roles.php';
 include '../app/controllers/usuarios/listado_usuarios.php';
 include '../app/controllers/niveles/listado_niveles.php';
+include '../app/controllers/grados/listado_grados.php';
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -84,6 +85,30 @@ include '../app/controllers/niveles/listado_niveles.php';
                 <i class="fas"><i class="bi bi-body-text"></i></i>
               </div>
               <a href="<?=APP_URL;?>/admin/niveles" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <?php
+                $contador_grados = 0;
+                foreach ($grados as $grado) {
+
+                  $contador_grados = $contador_grados + 1;
+                }
+                ?>
+                <h3><?=$contador_grados;?></h3>
+
+                <p>Grados registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-bar-chart-steps"></i></i>
+              </div>
+              <a href="<?=APP_URL;?>/admin/grados" class="small-box-footer">
                 Mas informacion <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>

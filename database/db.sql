@@ -87,5 +87,35 @@ CREATE TABLE niveles (
 INSERT INTO niveles (gestion_id,nivel,turno,fyh_creacion,estado)
 VALUES ('1','INICIAL','MAÑANA','2024-12-11 20:29:10','1');
 
+CREATE TABLE grados (
+
+  id_grado       INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nivel_id       INT (11) NOT NULL,
+  curso          VARCHAR (255) NOT NULL,
+  paralelo       VARCHAR (255) NOT NULL,
+
+  fyh_creacion   DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado        VARCHAR (11),
+
+  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade
+
+)ENGINE=InnoDB;
+INSERT INTO grados (nivel_id,curso,paralelo,fyh_creacion,estado)
+VALUES ('1','INICIAL - 1','A','2024-12-11 20:29:10','1');
+
+CREATE TABLE materias (
+
+  id_materia      INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre_materia         VARCHAR (255) NOT NULL,
+
+  fyh_creacion   DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado        VARCHAR (11)
+
+)ENGINE=InnoDB;
+INSERT INTO materias (nombre_materia,fyh_creacion,estado)
+VALUES ('MATEMÁTICA','2023-12-28 20:29:10','1');
+
 
 
